@@ -53,12 +53,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#111] pt-8 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-xs text-[#2A2A2A]">© 2025 Jessica Colaco. All rights reserved.</p>
-          <div className="flex gap-6">
-            {["Privacy", "Terms", "Cookies"].map((l) => (
-              <button key={l} className="text-xs text-[#2A2A2A] hover:text-[#555] transition-colors">{l}</button>
-            ))}
-          </div>
+          <p className="text-xs text-[#2A2A2A]">© 2026 Jessica Colaco. All rights reserved.</p>
         </div>
       </div>
     </footer>
