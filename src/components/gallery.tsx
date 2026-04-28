@@ -1,10 +1,20 @@
+import uan1 from '../assets/uan-summit2.png';
+import uan2 from '../assets/uan summit 1.png';
+import uan3 from '../assets/uan3.png';
+import ms1 from '../assets/ms1.png';
+import ms2 from '../assets/ms2.png';
+import sa1 from '../assets/sa1.jpg';
+import sa2 from '../assets/sa2.jpg';
+
 const galleryItems = [
-  { label: "Keynote — Nairobi Tech Summit 2024", type: "Speaking", wide: true, symbol: "◈" },
-  { label: "StoryVelocity Cohort 3 Workshop", type: "Workshop", wide: false, symbol: "◉" },
-  { label: "AI Tools Demo — Creative Week Lagos", type: "Demo", wide: false, symbol: "◇" },
-  { label: "1:1 Deep Dive Coaching Session", type: "Coaching", wide: false, symbol: "◎" },
-  { label: "Brand Narrative Retreat — Zanzibar", type: "Retreat", wide: false, symbol: "○" },
-  { label: "Podcast — The Story Engineer Ep. 12", type: "Media", wide: false, symbol: "●" },
+
+  { label: "UAN Leadership Summit", type: "Speaking", wide: true, image: uan1},
+  { label: "UAN Leadership Summit", type: "Speaking", wide: false, image: uan2 },
+  { label: "Networking Masterclass", type: "Workshop", wide: false, image: ms2 },
+  { label: "Networking Masterclass", type: "Workshop", wide: false, image: ms1 },
+  { label: "Salons Assured - Training", type: "Workshop", wide: false, image: sa1 },
+  { label: "Salons Assured - Training", type: "Workshop", wide: false, image: sa2 },
+  { label: "UAN Leadership Summit", type: "Speaking", wide: true, image: uan3},
 ];
 
 export default function Gallery() {
@@ -24,7 +34,7 @@ export default function Gallery() {
             </h2>
           </div>
           <p className="text-[#A09880] max-w-xs text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore.
+            From keynote stages to intimate workshops — here's a look at where I've been showing up.
           </p>
         </div>
 
@@ -33,23 +43,22 @@ export default function Gallery() {
             <div
               key={i}
               className={`group relative overflow-hidden border border-[#181818] hover:border-[#C9A84C]/35 transition-all duration-500 cursor-pointer ${item.wide ? "col-span-2" : ""}`}
-              style={{ aspectRatio: item.wide ? "2/1" : "1/1", background: "linear-gradient(135deg,#111009 0%,#0A0908 100%)" }}
+              style={{ aspectRatio: item.wide ? "2/1" : "1/1" }}
             >
-              {/* Abstract visual placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className={`rounded-full bg-[#C9A84C]/8 flex items-center justify-center`} style={{ width: item.wide ? 100 : 70, height: item.wide ? 100 : 70 }}>
-                    <span className="text-[#C9A84C]/40" style={{ fontSize: item.wide ? 36 : 26 }}>{item.symbol}</span>
-                  </div>
-                  <div className="absolute -inset-3 border border-[#C9A84C]/8 rounded-full" style={{ animation: `spin ${10 + i * 2}s linear infinite` }} />
-                </div>
-              </div>
+              <img
+                src={item.image}
+                alt={item.label}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
 
-              {/* Hover tint */}
-              <div className="absolute inset-0 bg-[#C9A84C]/0 group-hover:bg-[#C9A84C]/4 transition-all duration-500" />
+              {/* Dark overlay always present, deepens on hover */}
+              <div className="absolute inset-0 bg-[#0A0A0A]/40 group-hover:bg-[#0A0A0A]/20 transition-all duration-500" />
+
+              {/* Gold hover tint */}
+              <div className="absolute inset-0 bg-[#C9A84C]/0 group-hover:bg-[#C9A84C]/8 transition-all duration-500" />
 
               {/* Label */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-1 group-hover:translate-y-0 opacity-60 group-hover:opacity-100 transition-all duration-400">
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-[#0A0A0A]/90 to-transparent translate-y-1 group-hover:translate-y-0 opacity-70 group-hover:opacity-100 transition-all duration-400">
                 <div className="h-px w-6 bg-[#C9A84C] mb-2" />
                 <p className="text-[9px] text-[#C9A84C] tracking-widest uppercase">{item.type}</p>
                 <p className="text-[11px] text-[#F0EDE6] mt-0.5">{item.label}</p>

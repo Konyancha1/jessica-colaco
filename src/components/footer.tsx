@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-[#555] leading-relaxed max-w-xs">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.
+              JESSICA COLACO is a public speaker, trainer, and thought leader passionate about equipping individuals and organizations with the skills they need to thrive in a fast-changing world.
             </p>
             <div className="flex gap-3 mt-6">
               {["X", "IG", "LI", "YT"].map((s) => (
@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <p className="text-[9px] tracking-[0.25em] uppercase text-[#444] mb-5">Navigate</p>
             <div className="flex flex-col gap-3">
-              {["About", "Services", "Masterclass", "Gallery", "Blog", "Book"].map((l) => (
+              {["About", "Masterclass", "Gallery", "Blog", "Book"].map((l) => (
                 <button key={l} onClick={() => document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" })} className="text-left text-sm text-[#444] hover:text-[#C9A84C] transition-colors">
                   {l}
                 </button>
@@ -44,16 +44,16 @@ export default function Footer() {
               <p className="text-sm text-[#444]">Nairobi, Kenya</p>
               <p className="text-sm text-[#444]">& Globally Remote</p>
             </div>
-            <p className="text-[9px] tracking-[0.25em] uppercase text-[#444] mb-3">Newsletter</p>
-            <div className="flex">
-              <input type="email" placeholder="lorem@ipsum.com" className="flex-1 bg-[#0F0F0F] border border-[#1A1A1A] text-[#F0EDE6] text-xs px-3 py-2.5 outline-none focus:border-[#C9A84C] placeholder:text-[#2A2A2A] transition-colors" />
-              <button className="bg-[#C9A84C] text-[#0A0A0A] px-3 py-2.5 text-xs font-bold hover:bg-[#F0C040] transition-colors">→</button>
-            </div>
           </div>
         </div>
 
         <div className="border-t border-[#111] pt-8 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-xs text-[#2A2A2A]">© 2026 Jessica Colaco. All rights reserved.</p>
+          <p className="text-xs text-[#2A2A2A]">© 2025 Jessica Colaco. All rights reserved.</p>
+          <div className="flex gap-6">
+            {["Privacy", "Terms", "Cookies"].map((l) => (
+              <button key={l} className="text-xs text-[#2A2A2A] hover:text-[#555] transition-colors">{l}</button>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

@@ -71,7 +71,9 @@ export default function Hero() {
           <div className="md:col-span-8">
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-12 bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase">Tech Entrepreneur · Storytelling Coach</span>
+              <span className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase">
+                Public Speaker · Leadership & Communication Trainer
+              </span>
             </div>
 
             {/* Personal greeting */}
@@ -87,8 +89,10 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="mt-8 text-base md:text-lg text-[#A09880] leading-relaxed max-w-lg animate-slide-up" style={{ animationDelay: "0.4s" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — ubi ars technicae narrationi iungitur.
+            <p className="mt-8 text-base md:text-lg text-[#A09880] leading-relaxed max-w-lg ...">
+              At the intersection of leadership, communication, and technology - I help
+              individuals and organizations think boldly, speak confidently, and lead
+              with intention in a fast-changing world.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.5s" }}>
@@ -105,7 +109,7 @@ export default function Hero() {
             <div className="mt-16 flex flex-wrap gap-12 animate-slide-up" style={{ animationDelay: "0.6s" }}>
               {[
                 { num: "500+", label: "Founders Coached" },
-                { num: "12+", label: "Industries Served" },
+                { num: "3+",   label: "Practice Areas" } ,
                 { num: "7 yrs", label: "At the Intersection" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col">
@@ -124,7 +128,8 @@ export default function Hero() {
                 <span className="text-xs text-[#A09880] tracking-widest uppercase">Currently Available</span>
               </div>
               <p className="text-xs text-[#555] leading-relaxed mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut perspiciatis.
+                Taking new clients for 1:1 strategy and coaching sessions - from
+                clarity calls to deep-dive brand and leadership work.
               </p>
               <button onClick={() => scrollTo("book")} className="w-full py-2.5 border border-[#C9A84C]/40 text-[#C9A84C] text-xs tracking-[0.15em] uppercase hover:bg-[#C9A84C]/10 transition-colors">
                 Book a Session →

@@ -1,32 +1,42 @@
 import { useState } from "react";
 
+const CALENDLY_URL = "https://calendly.com/jessicacolaco"; // to replace
+
 const plans = [
   {
     duration: "45 min",
     price: "$50",
-    label: "Strategy Session",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    features: ["Lorem ipsum dolor sit", "Consectetur adipiscing", "Sed do eiusmod tempor", "Ut labore et dolore"],
+    label: "Clarity & Strategy Call",
+    description: "Feeling stuck, scattered, or unsure what to focus on next? This session is designed to give you direction — so you can stop guessing and start moving with intention.",
+    features: [
+      "Clear direction on your next steps (career, brand, or business)",
+      "Identification of what's holding you back — and how to fix it",
+      "Focus areas that actually move the needle",
+      "Practical, actionable steps you can implement immediately",
+    ],
+    bestFor: "Anyone who needs clarity, structure, and a plan to move forward.",
     popular: false,
+    calendly: `${CALENDLY_URL}/clarity-strategy-call`, // replace with exact event link
   },
   {
     duration: "60 min",
     price: "$100",
-    label: "Deep Dive",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.",
-    features: ["Nemo enim ipsam voluptatem", "Quia voluptas sit aspernatur", "Sed quia consequuntur", "Magni dolores ratione", "At vero eos et accusamus"],
+    label: "Deep Dive Strategy Session",
+    description: "Ready to go beyond clarity and start building? We don't just talk — we refine, structure, and map out your next moves together across brand, content, positioning, and AI.",
+    features: [
+      "A personalized strategy tailored to your goals",
+      "Refined positioning and messaging",
+      "Content or visibility direction (what to say, how, where)",
+      "Live ideation and structured next steps you can act on immediately",
+    ],
+    bestFor: "Individuals ready to execute, refine their approach, and accelerate their growth.",
     popular: true,
+    calendly: `${CALENDLY_URL}/deep-dive-strategy-session`, // replace with exact event link
   },
 ];
 
 export default function Booking() {
   const [selected, setSelected] = useState<number | null>(null);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = () => {
-    if (form.name && form.email && selected !== null) setSubmitted(true);
-  };
 
   return (
     <section id="book" className="py-32 px-6 relative bg-[#060606]">
@@ -45,12 +55,11 @@ export default function Booking() {
             Book a <span className="text-[#C9A84C]">Consultation</span>
           </h2>
           <p className="text-[#A09880] max-w-md mx-auto text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim.
+            Whether you need clarity on your next step or a full strategy session — choose the format that fits where you are right now.
           </p>
         </div>
 
-        {/* Pricing */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-14">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {plans.map((plan, i) => (
             <div
               key={i}
@@ -62,6 +71,7 @@ export default function Booking() {
                   Most Popular
                 </div>
               )}
+
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <p className="text-[10px] text-[#555] tracking-widest uppercase mb-1">{plan.duration}</p>
@@ -72,54 +82,40 @@ export default function Booking() {
                   {selected === i && <div className="w-2 h-2 rounded-full bg-[#0A0A0A]" />}
                 </div>
               </div>
+
               <p className="text-xs text-[#A09880] leading-relaxed mb-6">{plan.description}</p>
-              <div className="flex flex-col gap-2">
+
+              <p className="text-[9px] text-[#555] tracking-widest uppercase mb-3">What you'll walk away with</p>
+              <div className="flex flex-col gap-2 mb-6">
                 {plan.features.map((f) => (
-                  <div key={f} className="flex items-center gap-2">
-                    <span className="text-[#C9A84C] text-xs">◈</span>
-                    <span className="text-xs text-[#A09880]">{f}</span>
+                  <div key={f} className="flex items-start gap-2">
+                    <span className="text-[#C9A84C] text-xs mt-0.5 shrink-0">◈</span>
+                    <span className="text-xs text-[#A09880] leading-relaxed">{f}</span>
                   </div>
                 ))}
               </div>
+
+              <div className="border-t border-[#1A1A1A] pt-4 mb-8">
+                <p className="text-[9px] text-[#555] tracking-widest uppercase mb-1">Best for</p>
+                <p className="text-xs text-[#A09880] leading-relaxed italic">{plan.bestFor}</p>
+              </div>
+
+              <a
+                href={plan.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="block w-full py-3.5 text-center text-sm tracking-[0.15em] uppercase font-bold transition-all duration-300 bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F0C040]"
+              >
+                Book This Session →
+              </a>
             </div>
           ))}
         </div>
 
-        {/* Form */}
-        {!submitted ? (
-          <div className="max-w-xl mx-auto border border-[#1A1A1A] p-8 bg-[#080808]">
-            <p className="text-[10px] text-[#555] tracking-widest uppercase mb-6 text-center">
-              {selected !== null ? `Selected: ${plans[selected].duration} — ${plans[selected].price}` : "Select a plan above to continue"}
-            </p>
-            <div className="flex flex-col gap-4">
-              <div>
-                <label className="text-[10px] tracking-[0.2em] uppercase text-[#555] mb-2 block">Your Name</label>
-                <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Lorem Ipsum" className="w-full bg-[#0A0A0A] border border-[#1E1E1E] focus:border-[#C9A84C] text-[#F0EDE6] text-sm px-4 py-3 outline-none transition-colors placeholder:text-[#2A2A2A]" />
-              </div>
-              <div>
-                <label className="text-[10px] tracking-[0.2em] uppercase text-[#555] mb-2 block">Email Address</label>
-                <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="lorem@ipsum.com" className="w-full bg-[#0A0A0A] border border-[#1E1E1E] focus:border-[#C9A84C] text-[#F0EDE6] text-sm px-4 py-3 outline-none transition-colors placeholder:text-[#2A2A2A]" />
-              </div>
-              <div>
-                <label className="text-[10px] tracking-[0.2em] uppercase text-[#555] mb-2 block">Tell Me About Your Story</label>
-                <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit..." className="w-full bg-[#0A0A0A] border border-[#1E1E1E] focus:border-[#C9A84C] text-[#F0EDE6] text-sm px-4 py-3 outline-none transition-colors resize-none placeholder:text-[#2A2A2A]" />
-              </div>
-              <button onClick={handleSubmit} disabled={!form.name || !form.email || selected === null} className="mt-2 w-full py-4 bg-[#C9A84C] text-[#0A0A0A] text-sm tracking-[0.2em] uppercase font-bold disabled:opacity-25 disabled:cursor-not-allowed hover:bg-[#F0C040] transition-colors">
-                Request My Session
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="max-w-xl mx-auto border border-[#C9A84C]/25 p-12 bg-[#080808] text-center">
-            <div className="w-14 h-14 rounded-full border border-[#C9A84C]/40 flex items-center justify-center mx-auto mb-6">
-              <span className="text-[#C9A84C] text-xl">◈</span>
-            </div>
-            <h3 className="font-display text-3xl text-[#C9A84C] mb-3">You're In!</h3>
-            <p className="text-sm text-[#A09880] leading-relaxed">
-              Lorem ipsum, {form.name}. Dolor sit amet consectetur adipiscing elit sed do eiusmod at {form.email} within 24 hours — {selected !== null ? plans[selected].duration : ""}.
-            </p>
-          </div>
-        )}
+        <p className="text-center text-xs text-[#555] mt-8">
+          You'll be redirected to Calendly to pick a time that works for you.
+        </p>
       </div>
     </section>
   );

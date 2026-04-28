@@ -4,7 +4,7 @@ interface NavProps {
   scrolled: boolean;
 }
 
-const links = ["About", "Services", "Masterclass", "Gallery", "Blog", "Book"];
+const links = ["About", "Masterclass", "Gallery", "Blog", "Book"];
 
 export default function Nav({ scrolled }: NavProps) {
   const [open, setOpen] = useState(false);
