@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const CALENDLY_URL = "https://calendly.com/jessicacolaco"; // to replace
+const CALENDLY_URL = "https://calendly.com/jessicacolaco"; // replace with your actual Calendly base URL
 
 const plans = [
   {
     duration: "45 min",
     price: "$50",
     label: "Clarity & Strategy Call",
-    description: "Feeling stuck, scattered, or unsure what to focus on next? This session is designed to give you direction — so you can stop guessing and start moving with intention.",
+    description: "Feeling stuck, scattered, or unsure what to focus on next? This session is designed to give you direction. Together, we'll look at where you are, what's not working, and where the real opportunity is — so you can stop guessing and start moving with intention.",
     features: [
       "Clear direction on your next steps (career, brand, or business)",
       "Identification of what's holding you back — and how to fix it",
@@ -16,22 +16,22 @@ const plans = [
     ],
     bestFor: "Anyone who needs clarity, structure, and a plan to move forward.",
     popular: false,
-    calendly: `${CALENDLY_URL}/clarity-strategy-call`, // replace with exact event link
+    calendly: `${CALENDLY_URL}/clarity-strategy-call`,
   },
   {
     duration: "60 min",
     price: "$100",
     label: "Deep Dive Strategy Session",
-    description: "Ready to go beyond clarity and start building? We don't just talk — we refine, structure, and map out your next moves together across brand, content, positioning, and AI.",
+    description: "This is for you if you're ready to go beyond clarity and start building. In this session, we don't just talk — we refine, structure, and map out your next moves together. Whether it's your personal brand, content, positioning, or how to leverage AI in your work, you'll leave with a strategy you can actually execute.",
     features: [
       "A personalized strategy tailored to your goals",
-      "Refined positioning and messaging",
-      "Content or visibility direction (what to say, how, where)",
-      "Live ideation and structured next steps you can act on immediately",
+      "Refined positioning and messaging (how you present yourself and your work)",
+      "Content or visibility direction (what to say, how to say it, where to show up)",
+      "Live ideation and structured next steps you can immediately act on",
     ],
-    bestFor: "Individuals ready to execute, refine their approach, and accelerate their growth.",
+    bestFor: "Individuals who are ready to execute, refine their approach, and accelerate their growth.",
     popular: true,
-    calendly: `${CALENDLY_URL}/deep-dive-strategy-session`, // replace with exact event link
+    calendly: `${CALENDLY_URL}/deep-dive-strategy-session`,
   },
 ];
 
@@ -64,7 +64,11 @@ export default function Booking() {
             <div
               key={i}
               onClick={() => setSelected(i)}
-              className={`relative border p-8 cursor-pointer transition-all duration-400 ${selected === i ? "border-[#C9A84C] bg-[#0F0E0B]" : "border-[#1E1E1E] hover:border-[#C9A84C]/25 bg-[#080808]"} ${plan.popular ? "md:-translate-y-2" : ""}`}
+              className={`relative border p-8 cursor-pointer transition-all duration-400 ${
+                selected === i
+                  ? "border-[#C9A84C] bg-[#0F0E0B]"
+                  : "border-[#1E1E1E] hover:border-[#C9A84C]/25 bg-[#080808]"
+              } ${plan.popular ? "md:-translate-y-2" : ""}`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C9A84C] text-[#0A0A0A] text-[9px] tracking-[0.2em] uppercase font-bold px-4 py-1">
@@ -78,7 +82,11 @@ export default function Booking() {
                   <p className="font-display text-4xl text-[#C9A84C]">{plan.price}</p>
                   <p className="text-sm text-[#F0EDE6] mt-1">{plan.label}</p>
                 </div>
-                <div className={`w-5 h-5 border rounded-full flex items-center justify-center mt-1 transition-colors ${selected === i ? "border-[#C9A84C] bg-[#C9A84C]" : "border-[#2A2A2A]"}`}>
+                <div
+                  className={`w-5 h-5 border rounded-full flex items-center justify-center mt-1 transition-colors ${
+                    selected === i ? "border-[#C9A84C] bg-[#C9A84C]" : "border-[#2A2A2A]"
+                  }`}
+                >
                   {selected === i && <div className="w-2 h-2 rounded-full bg-[#0A0A0A]" />}
                 </div>
               </div>

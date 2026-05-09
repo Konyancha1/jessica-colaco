@@ -77,22 +77,18 @@ export default function Hero() {
             </div>
 
             {/* Personal greeting */}
-            <p className="text-[#A09880] text-sm tracking-[0.2em] uppercase mb-4 font-body">Hi, I'm Jessica Colaco —</p>
+            <p className="text-[#A09880] text-sm tracking-[0.2em] uppercase mb-4 font-body">Hi, I’m JC —</p>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight mb-6">
-              <span className="block text-[#F0EDE6] animate-slide-up" style={{ animationDelay: "0.1s" }}>I Help You</span>
-              <span className="block text-[#F0EDE6] animate-slide-up" style={{ animationDelay: "0.2s" }}>Accelerate</span>
-              <span className="block animate-slide-up" style={{ animationDelay: "0.3s" }}>
-                <span className={`inline-block text-transparent bg-clip-text bg-linear-to-r from-[#C9A84C] to-[#F0C040] transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}>
-                  {words[wordIndex]}
-                </span>
+              <span className="block text-[#F0EDE6] animate-slide-up" style={{ animationDelay: "0.1s" }}>The Connector</span>
+              <span className="block text-[#F0EDE6] animate-slide-up" style={{ animationDelay: "0.2s" }}>Using</span>
+              <span className="block animate-slide-up text-[#F0C040]" style={{ animationDelay: "0.3s" }}>
+                Intentional Serendipity
               </span>
             </h1>
 
             <p className="mt-8 text-base md:text-lg text-[#A09880] leading-relaxed max-w-lg ...">
-              At the intersection of leadership, communication, and technology - I help
-              individuals and organizations think boldly, speak confidently, and lead
-              with intention in a fast-changing world.
+              I design ecosystems. Through thought leadership talks and masterclasses creating conditions for the right people to meet and build something real. AND now using AI to accelerate this.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.5s" }}>

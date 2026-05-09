@@ -1,4 +1,5 @@
 import jc from '../assets/jc.png';
+
 export default function About() {
   return (
     <section id="about" className="py-32 px-6 relative overflow-hidden">
@@ -15,13 +16,13 @@ export default function About() {
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-[#0A0A0A] to-transparent">
                 <div className="h-px w-full bg-linear-to-r from-[#C9A84C] to-transparent mb-3" />
-                <p className="text-[10px] text-[#C9A84C] tracking-[0.3em] uppercase">Tech Entrepreneur · Leadership &amp; Communication Trainer</p>
+                <p className="text-[10px] text-[#C9A84C] tracking-[0.3em] uppercase">Tech Entrepreneur · Ecosystem Builder</p>
                 <p className="text-sm text-[#F0EDE6] mt-1 font-display">Jessica Colaco</p>
               </div>
             </div>
             <div className="absolute -right-5 top-16 bg-[#C9A84C] text-[#0A0A0A] px-5 py-3 z-20">
-              <p className="text-[10px] font-bold tracking-widest uppercase">AI-Powered</p>
-              <p className="text-[10px] tracking-widest uppercase">Narrative Coach</p>
+              <p className="text-[10px] font-bold tracking-widest uppercase">Entrepreneur</p>
+              <p className="text-[10px] tracking-widest uppercase">Ecosystem Builder</p>
             </div>
             <div className="absolute -bottom-4 -left-4 w-full h-full border border-[#C9A84C]/15 z-0" />
           </div>
@@ -33,43 +34,46 @@ export default function About() {
             </div>
 
             <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-8">
-              I Live at the<br />
+              I operate at the<br />
               <span className="text-[#C9A84C]">Intersection</span><br />
-              of Code & Story
+              of the creative sector, technology, and talent
             </h2>
 
             <p className="text-[#A09880] leading-relaxed mb-5">
-              JESSICA COLACO is a public speaker, trainer, and thought leader passionate about equipping individuals and organizations with the skills they need to thrive in a fast-changing world.
+              Jessica Colaco is an entrepreneur and ecosystem builder working at the intersection of the creative sector, technology, and talent. With 18+ years of experience, she has co-founded ventures that shaped Africa's innovation story - most notably iHub (2010), widely accoladed for the rise of Kenya's "Silicon Savannah," and Brave, an HR-tech company focused on strategic talent acquisition, workforce planning, and executive search for tech and product talent in Africa.
             </p>
 
             <p className="text-[#A09880] leading-relaxed mb-5">
-              At the intersection of leadership, communication and technology, she delivers transformative training experiences that empower people to think boldly, speak confidently, and lead with intention.
+              She is a dynamic global speaker and thought leader, featured at SXSW (2014, 2015) and a guest lecturer at Harvard (2017, 2018). Her talks span ecosystem design, tech entrepreneurship, and talent - plus her favorite edge: intentional serendipity, aka building networks that don't just look impressive…..they actually change your life.
             </p>
 
             <p className="text-[#A09880] leading-relaxed mb-10">
-              Through her work, Jessica has built a reputation for breaking down complex ideas—whether in AI, storytelling, or personal leadership—into practical, actionable insights that audiences can immediately apply.
-            </p>
-
-            <p className="text-[#A09880] leading-relaxed mb-10">
-              Her sessions are not just informative; they are deeply engaging, interactive, and designed to shift mindsets. From emerging professionals to seasoned leaders, Jessica challenges her audiences to step into clarity, own their voice, and build influence that drives real impact.
-            </p>
-
-            <p className="text-[#A09880] leading-relaxed mb-10">
-              Beyond the stage, she is committed to creating spaces and platforms that support growth, connection, and continuous learning—because she believes that powerful communication and adaptive leadership are no longer optional, but essential.
+              She's known for turning big ideas into practical, people-first platforms that scale - with community at the center, always. That work has earned her recognition as a TED Fellow and a proud Harambean.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: "◈", label: "AI Storytelling Tools", desc: "Practical tools to craft and communicate ideas using AI" },
-                { icon: "◉", label: "Creative × Tech Bridge", desc: "Where technology meets human-centred storytelling" },
-                { icon: "◇", label: "Accelerated Learning", desc: "Fast, immersive sessions that create lasting mindset shifts" },
-                { icon: "◎", label: "Narrative Coaching", desc: "1:1 and group work to help you find and own your voice" },
+                { icon: "◈", label: "Ecosystem Design", desc: "Co-founder of iHub, the catalyst behind Kenya's Silicon Savannah" },
+                { icon: "◉", label: "Tech & Talent", desc: "Brave: HR-tech for strategic talent acquisition across Africa" },
+                { icon: "◇", label: "Global Speaker", desc: "SXSW, Harvard — spanning entrepreneurship, talent & serendipity" },
+                { icon: "◎", label: "Community Builder", desc: "People-first platforms that scale with community at the center" },
               ].map((item) => (
                 <div key={item.label} className="border border-[#1E1E1E] p-4 hover:border-[#C9A84C]/40 transition-colors group">
                   <span className="text-[#C9A84C]">{item.icon}</span>
                   <p className="text-xs font-semibold mt-2 text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">{item.label}</p>
                   <p className="text-[10px] text-[#555] mt-1 leading-relaxed">{item.desc}</p>
                 </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-6">
+              {["TED Fellow", "Harambean", "18+ Years", "SXSW Speaker", "Harvard Lecturer"].map((badge) => (
+                <span
+                  key={badge}
+                  className="text-[10px] tracking-[0.08em] uppercase px-3 py-1.5 border border-[#C9A84C]/30 text-[#C9A84C]"
+                >
+                  {badge}
+                </span>
               ))}
             </div>
 
