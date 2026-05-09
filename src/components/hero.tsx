@@ -1,23 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-
-const words = ["Stories.", "Brands.", "Legacies.", "Futures."];
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [wordIndex, setWordIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
-
-  // Word cycling
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setWordIndex((i) => (i + 1) % words.length);
-        setVisible(true);
-      }, 400);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
 
   // Particle canvas
   useEffect(() => {
@@ -109,23 +93,15 @@ export default function Hero() {
                 The Connector
               </span>
               <span className="block text-[#F0EDE6] animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                Building
+                Using
               </span>
-              <span
-                className="block animate-slide-up text-[#F0C040] transition-all duration-400"
-                style={{
-                  animationDelay: "0.3s",
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? "translateY(0)" : "translateY(12px)",
-                  transition: "opacity 0.4s ease, transform 0.4s ease",
-                }}
-              >
-                {words[wordIndex]}
+              <span className="block text-[#F0C040] animate-slide-up" style={{ animationDelay: "0.3s" }}>
+                Intentional Serendipity
               </span>
             </h1>
 
             <p className="mt-8 text-base md:text-lg text-[#A09880] leading-relaxed max-w-lg animate-slide-up" style={{ animationDelay: "0.4s" }}>
-              I design ecosystems, deliver thought leadership talks, and run masterclasses that create the conditions for the right people to meet and build something real — now accelerated with AI.
+              I design ecosystems. Through thought leadership talks and masterclasses creating conditions for the right people to meet and build something real. AND now using AI to accelerate this…
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.5s" }}>
@@ -147,9 +123,9 @@ export default function Hero() {
             {/* Stats */}
             <div className="mt-16 flex flex-wrap gap-12 animate-slide-up" style={{ animationDelay: "0.6s" }}>
               {[
-                { num: "18+", label: "Years of Experience" },
-                { num: "3+",  label: "Ventures Co-Founded" },
-                { num: "2",   label: "SXSW Appearances" },
+                { num: "18+",  label: "Years of Experience" },
+                { num: "3+",   label: "Ventures Co-Founded" },
+                { num: "2",    label: "SXSW Appearances" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col">
                   <span className="font-display text-3xl text-[#C9A84C]">{s.num}</span>
@@ -180,7 +156,13 @@ export default function Hero() {
             <div className="border border-[#1E1E1E] p-6 bg-[#080808] w-full">
               <p className="text-[10px] text-[#555] tracking-widest uppercase mb-3">Recognised As</p>
               <div className="flex flex-col gap-2">
-                {["TED Fellow", "Harambean", "iHub Co-Founder", "SXSW Speaker", "Harvard Guest Lecturer"].map((f) => (
+                {[
+                  "TED Fellow",
+                  "Harambean",
+                  "iHub Co-Founder",
+                  "SXSW Speaker",
+                  "Harvard Guest Lecturer",
+                ].map((f) => (
                   <div key={f} className="flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-[#C9A84C]" />
                     <span className="text-xs text-[#A09880]">{f}</span>
