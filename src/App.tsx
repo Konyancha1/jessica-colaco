@@ -9,9 +9,11 @@ import Hero from "./components/hero";
 import Masterclass from "./components/masterclass";
 import Nav from "./components/navbar";
 import BlogPost from "./components/blog-post";
+import EventPopup from "./components/eventPop";
 
 function Home({ scrolled }: { scrolled: boolean }) {
   return (
+    
     <div className="bg-[#0A0A0A] text-[#F0EDE6] font-body overflow-x-hidden">
       <Nav scrolled={scrolled} />
       <Hero />
@@ -21,6 +23,7 @@ function Home({ scrolled }: { scrolled: boolean }) {
       <Blog />
       <Booking />
       <Footer />
+      <EventPopup delay={3000} sessionKey="events_may2026" />
     </div>
   );
 }
