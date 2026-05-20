@@ -3,27 +3,6 @@ import { useState, useEffect, useRef } from "react";
 /* ─── Event data ───────────────────────────────────────────────── */
 const EVENTS = [
   {
-    id: "africa-speaks",
-    tag: "Free Webinar · Tomorrow",
-    urgent: true,
-    title: "Africa Speaks",
-    subtitle: "Networking, Public Speaking & Storytelling",
-    description:
-      "Build confidence in communication, structure your ideas, strengthen your networking, and use AI tools to sharpen your message.",
-    meta: [
-      { icon: "📅", text: "Wednesday, 20 May 2026" },
-      { icon: "🕡", text: "6:30 PM – 7:30 PM EAT" },
-      { icon: "💻", text: "Online · Free to attend" },
-    ],
-    badges: ["Public Speaking", "Storytelling", "Networking", "AI Tools"],
-    cta: "Sign Up For Masterclass",
-    ctaHref: "https://forms.gle/9U1H7xKpvo6d47JY6",
-    secondaryCta: "Learn more",
-    secondaryHref: "#masterclass",
-    accentColor: "#D4AF37",
-    accentGlow: "rgba(212,175,55,0.28)",
-  },
-  {
     id: "ai-quick-wins",
     tag: "Course · Starts June 4",
     urgent: false,
