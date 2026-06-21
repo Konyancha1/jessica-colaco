@@ -1,5 +1,4 @@
 import { useState } from "react";
-import poster from '../assets/jc-masterclass.jpeg';
 
 const modules = [
   { num: "01", title: "The Narrative Blueprint", desc: "Discover the foundational structure behind every compelling story — and learn how to map your own narrative arc with clarity and intention." },
