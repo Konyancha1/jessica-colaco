@@ -27,54 +27,6 @@ export default function Masterclass() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-
-        {/* Info Session Banner */}
-        <div className="mb-20 border border-[#C9A84C]/30 bg-[#0D0C09] relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-1 h-full bg-[#C9A84C]" />
-          <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center p-8 pl-10">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-px w-8 bg-[#C9A84C]" />
-                <span className="text-[#C9A84C] text-xs tracking-[0.25em] uppercase">Free Info Session</span>
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl text-[#F0EDE6] mb-3">
-                A Powerful Virtual Session on <span className="text-[#C9A84C]">Networking, Public Speaking & Storytelling</span>
-              </h3>
-              <p className="text-[#A09880] text-sm leading-relaxed mb-5 max-w-xl">
-                We'll explore how to build confidence in communication, structure and deliver your ideas clearly, strengthen your networking skills, and use AI tools to refine your messaging. Whether you're a student, professional, entrepreneur, or creative - this session is for you.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-6">
-              {["Wednesday, 20th May 2026", "6:30 PM – 7:30 PM", "Online"].map((badge) => (
-                <span
-                  key={badge}
-                  className="text-[12px] tracking-[0.08em] uppercase px-3 py-1.5 border border-[#C9A84C]/30 text-[#C9A84C]"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-            </div>
-
-            {/* Poster placeholder — replace src with your actual poster image */}
-            <div className="hidden md:flex flex-col items-center gap-4">
-              <img src={poster} alt="Africa Speaks Info Session" className="w-44 h-60 object-cover" />
-            </div>
-          </div>
-
-          <div className="border-t border-[#C9A84C]/10 px-10 py-4 flex items-center justify-between flex-wrap gap-4">
-            <p className="text-[#555] text-xs tracking-wide">Limited spaces available. Reserve your spot today.</p>
-            <a
-              href={INFO_SESSION_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative px-6 py-3 bg-[#C9A84C] text-[#0A0A0A] text-xs tracking-[0.15em] uppercase font-bold overflow-hidden hover:shadow-[0_0_30px_rgba(201,168,76,0.4)] transition-shadow inline-block"
-            >
-              <span className="relative z-10">Reserve Your Free Spot →</span>
-              <div className="absolute inset-0 bg-[#F0C040] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-
         {/* Masterclass Section */}
         <div className="grid md:grid-cols-2 gap-20 items-start">
           <div>
