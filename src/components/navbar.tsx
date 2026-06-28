@@ -263,7 +263,7 @@ export default function Nav({ scrolled }: NavProps) {
             {mobileWorkOpen && (
               <div className="pl-4 pb-3 flex flex-col gap-4">
                 <a
-                  href="https://calendly.com/jessicacolaco/45min"
+                  href="https://calendly.com/jc-jessicacolaco"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs tracking-[0.15em] uppercase text-[#F0EDE6] hover:text-[#C9A84C] transition-colors"
@@ -272,7 +272,7 @@ export default function Nav({ scrolled }: NavProps) {
                   Book a Session — 45 min
                 </a>
                 <a
-                  href="https://calendly.com/jessicacolaco/60min"
+                  href="https://calendly.com/jc-jessicacolaco"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs tracking-[0.15em] uppercase text-[#F0EDE6] hover:text-[#C9A84C] transition-colors"
@@ -281,7 +281,7 @@ export default function Nav({ scrolled }: NavProps) {
                   Book a Session — 60 min
                 </a>
                 <a
-                  href="mailto:jessica@jessicacolaco.com"
+                  href="mailto:jc@jessicacolaco.com"
                   className="text-xs tracking-[0.15em] uppercase text-[#F0EDE6] hover:text-[#C9A84C] transition-colors"
                   onClick={() => setOpen(false)}
                 >

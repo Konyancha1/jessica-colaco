@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 const EVENTS = [
   {
     id: "ai-quick-wins",
-    tag: "Course · Starts June 4",
+    tag: "Course · Starts July 15",
     urgent: false,
     title: "AI Quick Wins for Leaders",
     subtitle: "Practical AI workflows for non-developers",

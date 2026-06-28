@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CALENDLY_URL = "https://calendly.com/jessicacolaco"; // replace with your actual Calendly base URL
+const CALENDLY_URL = "https://calendly.com/jc-jessicacolaco"; // replace with your actual Calendly base URL
 
 const plans = [
   {
@@ -16,7 +16,7 @@ const plans = [
     ],
     bestFor: "Anyone who needs clarity, structure, and a plan to move forward.",
     popular: false,
-    calendly: `${CALENDLY_URL}/clarity-strategy-call`,
+    calendly: `${CALENDLY_URL}`,
   },
   {
     duration: "60 min",
