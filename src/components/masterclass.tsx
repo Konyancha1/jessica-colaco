@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 const modules = [
-  { num: "01", title: "The Narrative Blueprint", desc: "Discover the foundational structure behind every compelling story — and learn how to map your own narrative arc with clarity and intention." },
-  { num: "02", title: "AI as Your Story Partner", desc: "Explore how to use AI tools to accelerate your storytelling process — from ideation to refinement — without losing your authentic voice." },
-  { num: "03", title: "Voice, Presence & Delivery", desc: "Build the confidence to own any room — virtual or physical. Learn how to structure and deliver ideas that land, resonate, and inspire action." },
-  { num: "04", title: "Live Story Lab", desc: "Put it all into practice in a live, interactive session. Get real-time feedback, refine your delivery, and leave with a story you're proud to tell." },
+  { num: "01", title: "AI Foundations for Leaders", desc: "Move beyond basic prompts. Build a working mental model of what AI can and can't do for your business, and identify the real challenges worth automating." },
+  { num: "02", title: "Workflow Automation Essentials", desc: "Learn the core principles of automation and how to map a manual, repetitive task into a streamlined AI-powered workflow." },
+  { num: "03", title: "Tools in Action — Zapier, Make & n8n", desc: "Get hands-on with ChatGPT, Claude, Zapier, Make, and n8n. Connect them together to automate real tasks and cut out the busywork." },
+  { num: "04", title: "Build & Ship Your Workflow", desc: "Put it all into practice. Build at least one AI-powered workflow you can take straight back into your work, with feedback from the CommonLab team." },
 ];
 
 const highlights = [
-  { label: "4 Modules", sub: "Structured for real-world application" },
-  { label: "Live Sessions", sub: "2-hour interactive online sessions" },
-  { label: "AI Toolkit", sub: "Tools you can use immediately" },
-  { label: "Coaching & Community", sub: "Free 30-min coaching session with JC" },
+  { label: "4 Evening Sessions", sub: "18, 20, 25 & 27 August · 6:00–8:00 PM" },
+  { label: "iHub, Nairobi", sub: "In-person, practical, hands-on" },
+  { label: "AI Toolkit", sub: "ChatGPT, Claude, Zapier, Make, n8n" },
+  { label: "Real Output", sub: "Leave with a workflow you can use immediately" },
 ];
 
-const INFO_SESSION_LINK = "https://forms.gle/9U1H7xKpvo6d47JY6";
+const INFO_SESSION_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSelLbt7U56BGeu0OL0CkdCcrpFXLRn6KkbKNUKSPan6mQXtAw/viewform?usp=header";
 
 export default function Masterclass() {
   const [activeModule, setActiveModule] = useState(0);
@@ -31,21 +31,21 @@ export default function Masterclass() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs tracking-[0.25em] uppercase">Flagship Program</span>
+              <span className="text-[#C9A84C] text-xs tracking-[0.25em] uppercase">CommonLab × iHub</span>
             </div>
 
             <h2 className="font-display text-5xl md:text-6xl leading-tight mb-6">
-              Africa<span className="text-[#C9A84C]">Speaks</span><br />Masterclass
+              AI Quick Wins<br /><span className="text-[#C9A84C]">for Leaders</span>
             </h2>
 
             <p className="text-[#A09880] leading-relaxed mb-4">
-              A transformative masterclass for professionals, founders, leaders, and creatives who want to communicate with clarity, confidence, and impact. Whether you're building a brand, leading a team, pitching an idea, growing your influence, or stepping onto a stage — your story is one of your greatest assets.
+              If you've been wondering how to move beyond basic AI prompts and start using AI to solve real business challenges, this masterclass is for you. Join us for 4 practical evening sessions where you'll learn how to automate workflows, improve operational efficiency, and boost productivity using tools like ChatGPT, Claude, Zapier, Make, and n8n.
             </p>
             <p className="text-[#A09880] leading-relaxed mb-10">
-              Across four immersive modules over 4 weeks, you'll learn how to craft, refine, and deliver powerful narratives that move people, open doors, and create opportunity — combining timeless storytelling principles with modern AI tools.
+              Whether you're a business owner, team lead, consultant, marketer, creative, or operations professional, you'll leave with practical AI skills and at least one AI-powered workflow you can immediately apply in your work.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mb-10">
+            <div className="grid grid-cols-2 gap-4 mb-8">
               {highlights.map((h) => (
                 <div key={h.label} className="border-l-2 border-[#C9A84C] pl-4">
                   <p className="font-semibold text-[#F0EDE6] text-sm">{h.label}</p>
@@ -54,13 +54,21 @@ export default function Masterclass() {
               ))}
             </div>
 
+            <div className="mb-10 border border-[#1A1A1A] bg-[#0D0C09] px-6 py-5">
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+                <p className="text-[#F0EDE6] text-sm font-semibold">KES 12,000 <span className="text-[#555] font-normal">— single ticket</span></p>
+                <p className="text-[#C9A84C] text-sm font-semibold">KES 10,000pp <span className="text-[#555] font-normal">— bring a colleague</span></p>
+              </div>
+              <p className="text-xs text-[#555]">Seats are limited. Call 0793 014 798 for more information.</p>
+            </div>
+
             <a
               href={INFO_SESSION_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-block px-8 py-4 bg-[#C9A84C] text-[#0A0A0A] text-sm tracking-[0.15em] uppercase font-bold overflow-hidden hover:shadow-[0_0_40px_rgba(201,168,76,0.5)] transition-shadow"
             >
-              <span className="relative z-10">Sign Up for Masterclass</span>
+              <span className="relative z-10">Register Now</span>
               <div className="absolute inset-0 bg-[#F0C040] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
             </a>
           </div>
