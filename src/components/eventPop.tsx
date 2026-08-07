@@ -4,22 +4,23 @@ import { useState, useEffect, useRef } from "react";
 const EVENTS = [
   {
     id: "ai-quick-wins",
-    tag: "Course · Starts July 15",
-    urgent: false,
+    tag: "Masterclass · 18–27 August",
+    urgent: true,
     title: "AI Quick Wins for Leaders",
-    subtitle: "Practical AI workflows for non-developers",
+    subtitle: "CommonLab × iHub · Move beyond basic prompts",
     description:
-      "Stop copy-pasting between tools. Build your first useful AI automation in 4 weeks with Make, n8n, ChatGPT, Claude, Gmail, and more.",
+      "Move beyond basic AI prompts and start solving real business challenges. 4 practical evening sessions on automating workflows and boosting productivity with ChatGPT, Claude, Zapier, Make, and n8n.",
     meta: [
-      { icon: "📅", text: "Thursdays 7:00 PM EAT · 4 weeks" },
-      { icon: "📚", text: "24 lessons · 4 modules · ~485 min" },
-      { icon: "💳", text: "Ksh 12,000 · Founding Cohort price" },
+      { icon: "📅", text: "18, 20, 25 & 27 August · 6:00 – 8:00 PM" },
+      { icon: "📍", text: "iHub, Nairobi" },
+      { icon: "💳", text: "Ksh 12,000 single · Ksh 10,000pp with a colleague" },
     ],
-    badges: ["AI Workflows", "Make", "n8n", "No-Code", "Leadership"],
-    cta: "Reserve My Spot",
-    ctaHref: "https://commonlab.agentcommons.io/courses/ai-quick-wins-for-leaders",
-    secondaryCta: "Preview lessons",
-    secondaryHref: "https://commonlab.agentcommons.io/courses/ai-quick-wins-for-leaders",
+    badges: ["AI Workflows", "ChatGPT", "Claude", "Zapier", "Make", "n8n"],
+    cta: "Register Now",
+    ctaHref:
+      "https://docs.google.com/forms/d/e/1FAIpQLSelLbt7U56BGeu0OL0CkdCcrpFXLRn6KkbKNUKSPan6mQXtAw/viewform?usp=header",
+    secondaryCta: "Call 0793 014 798",
+    secondaryHref: "tel:0793014798",
     accentColor: "#7EC8C8",
     accentGlow: "rgba(126,200,200,0.22)",
   },
@@ -250,6 +251,8 @@ export default function EventPopup({
               <div style={{ display: "flex", gap: ".6rem" }}>
                 <a
                   href={ev.ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ep-cta-btn"
                   style={{
                     flex: "1 1 auto", display: "block", textAlign: "center",
@@ -284,26 +287,28 @@ export default function EventPopup({
             </div>
 
             {/* Dot switcher */}
-            <div style={{
-              display: "flex", justifyContent: "center",
-              alignItems: "center", gap: ".45rem", marginTop: "1.1rem",
-            }}>
-              {EVENTS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i)}
-                  className={`ep-dot${i === active ? " ep-dot-active" : ""}`}
-                  style={{
-                    background: i === active ? ev.accentColor : undefined,
-                    borderColor: i === active ? ev.accentColor : undefined,
-                    transition: "all .3s ease, background .35s ease",
-                    border: "none",
-                    padding: 0,
-                  } as React.CSSProperties}
-                  aria-label={`View event ${i + 1}`}
-                />
-              ))}
-            </div>
+            {EVENTS.length > 1 && (
+              <div style={{
+                display: "flex", justifyContent: "center",
+                alignItems: "center", gap: ".45rem", marginTop: "1.1rem",
+              }}>
+                {EVENTS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    className={`ep-dot${i === active ? " ep-dot-active" : ""}`}
+                    style={{
+                      background: i === active ? ev.accentColor : undefined,
+                      borderColor: i === active ? ev.accentColor : undefined,
+                      transition: "all .3s ease, background .35s ease",
+                      border: "none",
+                      padding: 0,
+                    } as React.CSSProperties}
+                    aria-label={`View event ${i + 1}`}
+                  />
+                ))}
+              </div>
+            )}
 
           </div>
         </div>
