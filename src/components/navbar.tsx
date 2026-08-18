@@ -87,16 +87,9 @@ export default function Nav({ scrolled }: NavProps) {
             {masterclassOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 bg-[#0D0C09] border border-[#C9A84C]/20 py-2 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#0D0C09] border-l border-t border-[#C9A84C]/20 rotate-45" />
-                <button
-                  onClick={() => scrollTo("masterclass")}
-                  className="w-full text-left px-5 py-3 group"
-                >
-                  <p className="text-xs tracking-[0.15em] uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">Africa Speaks</p>
-                  <p className="text-[10px] text-[#555] mt-0.5">4-week storytelling masterclass</p>
-                </button>
                 <div className="h-px bg-[#1A1A1A] mx-4" />
                 <button
-                  onClick={() => scrollTo("aiquickwins")}
+                  onClick={() => scrollTo("masterclass")}
                   className="w-full text-left px-5 py-3 group"
                 >
                   <p className="text-xs tracking-[0.15em] uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">AI Quick Wins</p>
@@ -135,36 +128,20 @@ export default function Nav({ scrolled }: NavProps) {
               <div className="absolute top-full right-0 mt-4 w-56 bg-[#0D0C09] border border-[#C9A84C]/20 py-2 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
                 <div className="absolute -top-2 right-5 w-3 h-3 bg-[#0D0C09] border-l border-t border-[#C9A84C]/20 rotate-45" />
 
-                <a
-                  href="https://calendly.com/jessicacolaco/45min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-5 py-3 group"
-                  onClick={() => setWorkOpen(false)}
-                >
-                  <div className="w-6 h-6 border border-[#C9A84C]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/10 transition-all">
-                    <span className="text-[#C9A84C] text-[9px]">45</span>
-                  </div>
-                  <div>
-                    <p className="text-xs tracking-[0.1em] uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">Book a Session</p>
-                    <p className="text-[10px] text-[#555] mt-0.5">45-minute call</p>
-                  </div>
-                </a>
-
                 <div className="h-px bg-[#1A1A1A] mx-4" />
 
                 <a
-                  href="https://calendly.com/jessicacolaco/60min"
+                  href="https://calendly.com/jc-jessicacolaco"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-5 py-3 group"
                   onClick={() => setWorkOpen(false)}
                 >
-                  <div className="w-6 h-6 border border-[#C9A84C]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/10 transition-all">
+                  <div className="w-6 h-6 border border-[#C9A84C]/30 flex items-center justify-center shrink-0 group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/10 transition-all">
                     <span className="text-[#C9A84C] text-[9px]">60</span>
                   </div>
                   <div>
-                    <p className="text-xs tracking-[0.1em] uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">Book a Session</p>
+                    <p className="text-xs tracking-widest uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">Book a Session</p>
                     <p className="text-[10px] text-[#555] mt-0.5">60-minute call</p>
                   </div>
                 </a>
@@ -172,15 +149,15 @@ export default function Nav({ scrolled }: NavProps) {
                 <div className="h-px bg-[#1A1A1A] mx-4" />
 
                 <a
-                  href="mailto:jessica@jessicacolaco.com"
+                  href="mailto:jc@jessicacolaco.com"
                   className="flex items-center gap-3 px-5 py-3 group"
                   onClick={() => setWorkOpen(false)}
                 >
-                  <div className="w-6 h-6 border border-[#C9A84C]/30 flex items-center justify-center flex-shrink-0 group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/10 transition-all">
+                  <div className="w-6 h-6 border border-[#C9A84C]/30 flex items-center justify-center shrink-0 group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/10 transition-all">
                     <span className="text-[#C9A84C] text-[9px]">✉</span>
                   </div>
                   <div>
-                    <p className="text-xs tracking-[0.1em] uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">Email Me</p>
+                    <p className="text-xs tracking-widest uppercase text-[#F0EDE6] group-hover:text-[#C9A84C] transition-colors">Email Me</p>
                     <p className="text-[10px] text-[#555] mt-0.5">For speaking & partnerships</p>
                   </div>
                 </a>
@@ -222,9 +199,6 @@ export default function Nav({ scrolled }: NavProps) {
             </button>
             {mobileMasterclassOpen && (
               <div className="pl-4 pb-3 flex flex-col gap-3">
-                <button onClick={() => scrollTo("masterclass")} className="text-left text-xs tracking-[0.15em] uppercase text-[#F0EDE6] hover:text-[#C9A84C] transition-colors">
-                  Africa Speaks
-                </button>
                 <button onClick={() => scrollTo("aiquickwins")} className="text-left text-xs tracking-[0.15em] uppercase text-[#F0EDE6] hover:text-[#C9A84C] transition-colors">
                   AI Quick Wins
                 </button>
