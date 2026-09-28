@@ -1,24 +1,26 @@
 import { useState, useEffect, useRef } from "react";
+import image from "../images/ai-quick-wins-poster.jpeg";
 
 /* ─── Event data ───────────────────────────────────────────────── */
 const EVENTS = [
   {
     id: "ai-quick-wins",
-    tag: "Masterclass · 18–27 August",
+    image: image,
+    imageAlt:
+      "AI Quick Wins Show & Tell poster – 3rd October, 2pm–4pm, Node NBO, Gigiri",
+    tag: "Masterclass · 3rd October 2026",
     urgent: true,
-    title: "AI Quick Wins for Leaders",
-    subtitle: "CommonLab × iHub · Move beyond basic prompts",
+    title: "AI Quick Wins Show & Tell",
+    subtitle: "See what people have been building with AI-powered workflows",
     description:
-      "Move beyond basic AI prompts and start solving real business challenges. 4 practical evening sessions on automating workflows and boosting productivity with ChatGPT, Claude, Zapier, Make, and n8n.",
+      "Curious to see what people are actually building with AI? Join us for an afternoon of live demos, real workflows, practical AI applications and conversations with participants from our inaugural AI Quick Wins cohort.",
     meta: [
-      { icon: "📅", text: "18, 20, 25 & 27 August · 6:00 – 8:00 PM" },
-      { icon: "📍", text: "iHub, Nairobi" },
-      { icon: "💳", text: "Ksh 12,000 single · Ksh 10,000pp with a colleague" },
+      { icon: "📅", text: "3rd October 2026 . 2pm - 4pm" },
+      { icon: "📍", text: "Node NBO, Gigiri, 1 Waitabit Lane, Nairobi" },
     ],
     badges: ["AI Workflows", "ChatGPT", "Claude", "Zapier", "Make", "n8n"],
     cta: "Register Now",
-    ctaHref:
-      "https://docs.google.com/forms/d/e/1FAIpQLSelLbt7U56BGeu0OL0CkdCcrpFXLRn6KkbKNUKSPan6mQXtAw/viewform?usp=header",
+    ctaHref: "https://forms.gle/YP9mmej8TGJT9noV9",
     secondaryCta: "Call 0793 014 798",
     secondaryHref: "tel:0793014798",
     accentColor: "#7EC8C8",
@@ -29,7 +31,7 @@ const EVENTS = [
 /* ─── Component ────────────────────────────────────────────────── */
 export default function EventPopup({
   delay = 3000,
-  sessionKey = "event_popup_v3",
+  sessionKey = "event_popup_v4",
 }: {
   delay?: number;
   sessionKey?: string;
@@ -72,6 +74,7 @@ export default function EventPopup({
 
   if (!visible) return null;
   const ev = EVENTS[active];
+  const poster = ev as { image?: string; imageAlt?: string };
 
   return (
     <>
@@ -134,6 +137,8 @@ export default function EventPopup({
           border: "1px solid rgba(255,255,255,0.07)",
           borderRadius: 20,
           overflow: "hidden",
+          overflowY: "auto",
+          maxHeight: "calc(100vh - 2.5rem)",
           boxShadow: "0 32px 80px rgba(0,0,0,.7), inset 0 0 0 1px rgba(255,255,255,.04)",
         }}>
           {/* Top accent bar */}
@@ -142,6 +147,37 @@ export default function EventPopup({
             background: `linear-gradient(90deg, transparent 0%, ${ev.accentColor} 35%, ${ev.accentColor}bb 65%, transparent 100%)`,
             transition: "background .4s ease",
           }} />
+
+          {/* Poster */}
+          {poster.image && (
+            <div style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "4 / 5",
+              maxHeight: "min(46vh, 420px)",
+              overflow: "hidden",
+              background: "#ffffff",
+            }}>
+              <img
+                src={poster.image}
+                alt={poster.imageAlt ?? ev.title}
+                loading="eager"
+                onError={e => (e.currentTarget.parentElement!.style.display = "none")}
+                style={{
+                  width: "100%", height: "100%",
+                  objectFit: "cover", objectPosition: "top center",
+                  display: "block",
+                  opacity: sliding ? 0 : 1,
+                  transition: "opacity .28s ease",
+                }}
+              />
+              {/* Blend the white poster into the dark card */}
+              <div style={{
+                position: "absolute", inset: 0, pointerEvents: "none",
+                background: "linear-gradient(180deg, transparent 60%, #161616 100%)",
+              }} />
+            </div>
+          )}
 
           <div style={{ padding: "1.65rem 1.8rem 1.5rem" }}>
 

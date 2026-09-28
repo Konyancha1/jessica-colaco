@@ -8,8 +8,8 @@ const modules = [
 ];
 
 const highlights = [
-  { label: "4 Evening Sessions", sub: "18, 20, 25 & 27 August · 6:00–8:00 PM" },
-  { label: "iHub, Nairobi", sub: "In-person, practical, hands-on" },
+  { label: "TBC", sub: "TBC" },
+  { label: "TBC", sub: "In-person, practical, hands-on" },
   { label: "AI Toolkit", sub: "ChatGPT, Claude, Zapier, Make, n8n" },
   { label: "Real Output", sub: "Leave with a workflow you can use immediately" },
 ];
